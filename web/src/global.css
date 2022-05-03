@@ -8,9 +8,13 @@
 }
 
 .button {
-  @apply bg-brand-500 rounded-full px-3 h-12
+  @apply bg-brand-500 text-on-brand-color rounded-full px-3 h-12 flex items-center 
 }
 
 .button-icon {
-  @apply w-6 h-6 text-on-brand-color
+  @apply w-6 h-6 
+}
+
+.button-title {
+  @apply max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-linear
 }
