@@ -1,17 +1,9 @@
-interface ButtonProps {
-  title: string;
-}
+import { Widget } from './components/Widget';
 
-function Button(props: ButtonProps) {
-  return <button>{props.title}</button>;
-}
-
-function App() {
+export const App = () => {
   return (
     <>
-      <Button title="Ok" />
+      <Widget />
     </>
   );
-}
-
-export default App;
+};

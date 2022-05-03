@@ -2,3 +2,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.button-container {
+  @apply absolute bottom-5 right-5
+}
+
+.button {
+  @apply bg-brand-500 rounded-full px-3 h-12
+}
+
+.button-icon {
+  @apply w-6 h-6 text-on-brand-color
+}
