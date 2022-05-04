@@ -3,8 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply bg-black text-zinc-100
+}
+
 .button-container {
-  @apply absolute bottom-5 right-5
+  @apply absolute bottom-4 right-4 md:bottom-8 md:right-8 flex flex-col items-end
 }
 
 .button {
@@ -17,4 +21,8 @@
 
 .button-title {
   @apply max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-linear
+}
+
+.form-container {
+  @apply bg-zinc-900 p-4 relative rounded-2xl mb-4 flex flex-col items-center shadow-lg w-[calc(100vw-2rem)] md:w-auto
 }
