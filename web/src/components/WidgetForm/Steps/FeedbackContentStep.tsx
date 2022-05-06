@@ -1,7 +1,9 @@
 import { ArrowLeft } from 'phosphor-react';
+import { useState } from 'react';
 
 import { FeedBackType, feedbackTypes } from '..';
 import { CloseButton } from '../../CloseButton';
+import { ScreenshotButton } from '../ScreenshotButton';
 
 interface FeedbackContentStepProps {
   feedbackType: FeedBackType;
@@ -12,6 +14,8 @@ export const FeedbackContentStep = ({
   feedbackType,
   onFeedbackRestarted,
 }: FeedbackContentStepProps) => {
+  const [screenshot, setScreenshot] = useState<string | null>(null);
+
   const feedbackTypeInfo = feedbackTypes[feedbackType];
 
   return (
@@ -36,7 +40,20 @@ export const FeedbackContentStep = ({
         <CloseButton />
       </header>
 
-      <div className="form-content"></div>
+      <form className="form-content-container">
+        <textarea
+          className="form-content-text-area"
+          placeholder="Tell us in more detail what's hapenning..."
+        ></textarea>
+
+        <footer className="form-content-footer">
+          <ScreenshotButton onScreenshotTaken={setScreenshot} />
+
+          <button type="submit" className="form-content-footer-submit">
+            Send Feedback
+          </button>
+        </footer>
+      </form>
     </>
   );
 };
