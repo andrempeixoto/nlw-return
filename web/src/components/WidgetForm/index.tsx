@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import { FeedbackContentStep } from './Steps/FeedbackContentStep';
 import { FeedbackTypeStep } from './Steps/FeedbackTypeStep';
 
 import bugImageUrl from '../../assets/bug.svg';
@@ -25,7 +26,7 @@ export const feedbackTypes = {
     title: 'Thought',
     image: {
       source: thoughtImageUrl,
-      alt: 'Image of an thought balloon',
+      alt: 'Image of a thought balloon',
     },
   },
 };
@@ -40,15 +41,12 @@ export const WidgetForm = () => {
       {!feedbackType ? (
         <FeedbackTypeStep onFeedbackTypeChanged={setFeedbackType} />
       ) : (
-        'Hey'
+        <FeedbackContentStep feedbackType={feedbackType} onFeedbackRestarted={setFeedbackType} />
       )}
 
-      <footer className="text-xs text-neutral-400">
+      <footer className="form-footer">
         Created by{' '}
-        <a
-          className="hover:underline underline-offset-2"
-          href="https://andrepeixoto.dev"
-        >
+        <a className="hover:underline underline-offset-2" href="https://andrepeixoto.dev">
           Andre Peixoto
         </a>
       </footer>

@@ -5,7 +5,7 @@ interface FeedbackTypeStepProps {
   onFeedbackTypeChanged: (type: FeedBackType) => void;
 }
 
-export const FeedbackTypeStep = (props: FeedbackTypeStepProps) => {
+export const FeedbackTypeStep = ({ onFeedbackTypeChanged }: FeedbackTypeStepProps) => {
   return (
     <>
       <header>
@@ -18,7 +18,7 @@ export const FeedbackTypeStep = (props: FeedbackTypeStepProps) => {
           return (
             <button
               key={key}
-              onClick={() => props.onFeedbackTypeChanged(key as FeedBackType)}
+              onClick={() => onFeedbackTypeChanged(key as FeedBackType)}
               className="form-types-button"
               type="button"
             >
