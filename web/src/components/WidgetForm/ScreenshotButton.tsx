@@ -22,26 +22,30 @@ export const ScreenshotButton = ({ onScreenshotTaken, screenshot }: ScreenShotBu
     onScreenshotTaken(base64image);
   };
 
-  if (screenshot) {
+  if (!screenshot) {
     return (
       <button
         type="button"
-        onClick={() => onScreenshotTaken(null)}
-        className="form-content-footer-button"
-        style={{
-          backgroundImage: `url(${screenshot})`,
-          backgroundPosition: 'right bottom',
-          backgroundSize: 150,
-        }}
+        onClick={handleTakeScreenshot}
+        className="form-content-footer-screenshot-button"
       >
-        <Trash weight="fill" />
+        {isTakingScreenshot ? <Loading /> : <Camera className="w-6 h-6" />}
       </button>
     );
   }
 
   return (
-    <button type="button" onClick={handleTakeScreenshot} className="form-content-footer-camera">
-      {isTakingScreenshot ? <Loading /> : <Camera className="w-6 h-6" />}
+    <button
+      type="button"
+      onClick={() => onScreenshotTaken(null)}
+      className="form-content-footer-screenshot-delete-button"
+      style={{
+        backgroundImage: `url(${screenshot})`,
+        backgroundPosition: 'right bottom',
+        backgroundSize: 150,
+      }}
+    >
+      <Trash weight="fill" />
     </button>
   );
 };

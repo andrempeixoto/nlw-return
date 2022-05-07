@@ -24,7 +24,7 @@ body {
 }
 
 .form-container {
-  @apply bg-zinc-900 p-4 relative rounded-2xl mb-4 flex flex-col items-center shadow-lg w-[calc(100vw-2rem)] md:w-auto
+  @apply bg-zinc-900 p-4 relative rounded-2xl mb-4 flex flex-col items-center shadow-lg min-w-[200px] w-[calc(100vw-2rem)] md:w-auto
 }
 
 .form-types {
@@ -40,23 +40,23 @@ body {
 }
 
 .form-content-text-area {
-  @apply min-w-[304px] w-full min-h-[112px] text-sm placeholder-zinc-400 text-zinc-100 border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-brand-500 focus:ring-1 focus:outline-none resize-none scrollbar-thin scrollbar-thumb-zinc-700 scrollbar-track-transparent
+  @apply min-w-[160px] w-full min-h-[100px] text-sm placeholder-zinc-400 text-zinc-100 border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-brand-500 focus:ring-1 focus:outline-none resize-none scrollbar-thin scrollbar-thumb-zinc-700 scrollbar-track-transparent
 }
 
 .form-content-footer {
   @apply flex gap-2 mt-2
 }
 
-.form-content-footer-camera {
+.form-content-footer-screenshot-button {
   @apply p-2 bg-zinc-800 rounded-md border-transparent hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-brand-500 transition-colors 
 }
 
-.form-content-footer-button {
+.form-content-footer-screenshot-delete-button {
   @apply p-1 w-10 h-10 rounded-md border-transparent flex justify-end items-end text-zinc-400 hover:text-zinc-100 transition-colors
 }
 
-.form-content-footer-submit {
-  @apply p-2 bg-brand-500 rounded-md border-transparent flex flex-1 justify-center items-center text-sm hover:bg-brand-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-brand-500 transition-colors
+.form-content-footer-submit-button {
+  @apply p-2 bg-brand-500 rounded-md border-transparent flex flex-1 justify-center items-center text-sm hover:bg-brand-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-brand-500 transition-colors disabled:opacity-50 disabled:hover:bg-brand-500
 }
 
 .form-footer {
