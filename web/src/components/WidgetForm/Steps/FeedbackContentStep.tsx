@@ -43,11 +43,11 @@ export const FeedbackContentStep = ({
       <form className="form-content-container">
         <textarea
           className="form-content-text-area"
-          placeholder="Tell us in more detail what's hapenning..."
+          placeholder="Please tell us in detail what's happening..."
         ></textarea>
 
         <footer className="form-content-footer">
-          <ScreenshotButton onScreenshotTaken={setScreenshot} />
+          <ScreenshotButton onScreenshotTaken={setScreenshot} screenshot={screenshot} />
 
           <button type="submit" className="form-content-footer-submit">
             Send Feedback
