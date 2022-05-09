@@ -6,6 +6,7 @@ import { FeedbackTypeStep } from './Steps/FeedbackTypeStep';
 import bugImageUrl from '../../assets/bug.svg';
 import ideaImageUrl from '../../assets/idea.svg';
 import thoughtImageUrl from '../../assets/thought.svg';
+import { FeedbackSuccessStep } from './Steps/FeedbackSuccessStep';
 
 export const feedbackTypes = {
   BUG: {
@@ -31,19 +32,30 @@ export const feedbackTypes = {
   },
 };
 
-export type FeedBackType = keyof typeof feedbackTypes;
+export type FeedbackType = keyof typeof feedbackTypes;
 
 export const WidgetForm = () => {
-  const [feedbackType, setFeedbackType] = useState<FeedBackType | null>(null);
+  const [feedbackType, setFeedbackType] = useState<FeedbackType | null>(null);
+  const [feedbackSent, setFeedbackSent] = useState(false);
+
+  const handleRestartFeedback = () => {
+    setFeedbackType(null);
+    setFeedbackSent(false);
+  };
 
   return (
     <div className="form-container">
-      {!feedbackType ? (
+      {feedbackSent ? (
+        <FeedbackSuccessStep onFeedbackRestarted={handleRestartFeedback} />
+      ) : !feedbackType ? (
         <FeedbackTypeStep onFeedbackTypeChanged={setFeedbackType} />
       ) : (
-        <FeedbackContentStep feedbackType={feedbackType} onFeedbackRestarted={setFeedbackType} />
+        <FeedbackContentStep
+          feedbackType={feedbackType}
+          onFeedbackRestarted={handleRestartFeedback}
+          onFeedbackSent={setFeedbackSent}
+        />
       )}
-
       <footer className="form-footer">
         Created by{' '}
         <a className="hover:underline underline-offset-2" href="https://andrepeixoto.dev">

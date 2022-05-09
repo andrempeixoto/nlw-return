@@ -1,8 +1,8 @@
-import { FeedBackType, feedbackTypes } from '..';
+import { FeedbackType, feedbackTypes } from '..';
 import { CloseButton } from '../../CloseButton';
 
 interface FeedbackTypeStepProps {
-  onFeedbackTypeChanged: (type: FeedBackType) => void;
+  onFeedbackTypeChanged: (type: FeedbackType) => void;
 }
 
 export const FeedbackTypeStep = ({ onFeedbackTypeChanged }: FeedbackTypeStepProps) => {
@@ -18,7 +18,7 @@ export const FeedbackTypeStep = ({ onFeedbackTypeChanged }: FeedbackTypeStepProp
           return (
             <button
               key={key}
-              onClick={() => onFeedbackTypeChanged(key as FeedBackType)}
+              onClick={() => onFeedbackTypeChanged(key as FeedbackType)}
               className="form-types-button"
               type="button"
             >

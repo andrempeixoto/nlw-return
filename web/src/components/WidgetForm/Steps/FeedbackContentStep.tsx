@@ -1,18 +1,20 @@
 import { ArrowLeft } from 'phosphor-react';
 import { FormEvent, useState } from 'react';
 
-import { FeedBackType, feedbackTypes } from '..';
+import { FeedbackType, feedbackTypes } from '..';
 import { CloseButton } from '../../CloseButton';
 import { ScreenshotButton } from '../ScreenshotButton';
 
 interface FeedbackContentStepProps {
-  feedbackType: FeedBackType;
-  onFeedbackRestarted: (type: null) => void;
+  feedbackType: FeedbackType;
+  onFeedbackRestarted: () => void;
+  onFeedbackSent: (type: boolean) => void;
 }
 
 export const FeedbackContentStep = ({
   feedbackType,
   onFeedbackRestarted,
+  onFeedbackSent,
 }: FeedbackContentStepProps) => {
   const [screenshot, setScreenshot] = useState<string | null>(null);
   const [comment, setComment] = useState('');
@@ -22,6 +24,8 @@ export const FeedbackContentStep = ({
   const handleSubmitForm = (event: FormEvent) => {
     event.preventDefault();
     console.log(screenshot, comment);
+
+    onFeedbackSent(true);
   };
 
   return (
@@ -30,7 +34,7 @@ export const FeedbackContentStep = ({
         <button
           type="button"
           className="top-5 left-5 absolute text-zinc-400 hover:text-zinc-100"
-          onClick={() => onFeedbackRestarted(null)}
+          onClick={onFeedbackRestarted}
         >
           <ArrowLeft weight="bold" className="w-4 h-4" />
         </button>
