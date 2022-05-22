@@ -7,13 +7,13 @@ import { ScreenshotButton } from '../ScreenshotButton';
 
 interface FeedbackContentStepProps {
   feedbackType: FeedbackType;
-  onFeedbackRestarted: () => void;
+  onFeedbackRestartRequested: () => void;
   onFeedbackSent: (type: boolean) => void;
 }
 
 export const FeedbackContentStep = ({
   feedbackType,
-  onFeedbackRestarted,
+  onFeedbackRestartRequested,
   onFeedbackSent,
 }: FeedbackContentStepProps) => {
   const [screenshot, setScreenshot] = useState<string | null>(null);
@@ -34,7 +34,7 @@ export const FeedbackContentStep = ({
         <button
           type="button"
           className="top-5 left-5 absolute text-zinc-400 hover:text-zinc-100"
-          onClick={onFeedbackRestarted}
+          onClick={onFeedbackRestartRequested}
         >
           <ArrowLeft weight="bold" className="w-4 h-4" />
         </button>

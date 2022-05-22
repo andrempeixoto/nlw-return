@@ -3,10 +3,10 @@ import { CloseButton } from '../../CloseButton';
 import successImageUrl from '../../../assets/success.svg';
 
 interface FeedbackSuccessStepProps {
-  onFeedbackRestarted: () => void;
+  onFeedbackRestartRequested: () => void;
 }
 
-export const FeedbackSuccessStep = ({ onFeedbackRestarted }: FeedbackSuccessStepProps) => {
+export const FeedbackSuccessStep = ({ onFeedbackRestartRequested }: FeedbackSuccessStepProps) => {
   return (
     <>
       <header>
@@ -16,7 +16,7 @@ export const FeedbackSuccessStep = ({ onFeedbackRestarted }: FeedbackSuccessStep
       <div className="form-success-container">
         <img src={successImageUrl} />
         <span className="form-success-message">Thank you for your feedback!</span>
-        <button onClick={onFeedbackRestarted} className="form-success-button">
+        <button onClick={onFeedbackRestartRequested} className="form-success-button">
           Send another one
         </button>
       </div>

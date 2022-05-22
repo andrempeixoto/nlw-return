@@ -28,7 +28,7 @@ body {
 }
 
 .form-types {
-  @apply flex py-8 gap-2 w-full
+  @apply flex py-10 gap-2 w-full
 }
 
 .form-types-button {
@@ -36,7 +36,7 @@ body {
 }
 
 .form-content-container {
-  @apply my-4 w-full min-w-[19rem]
+  @apply my-6 w-full min-w-[19rem]
 }
 
 .form-content-text-area {

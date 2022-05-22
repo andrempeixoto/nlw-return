@@ -46,13 +46,13 @@ export const WidgetForm = () => {
   return (
     <div className="form-container">
       {feedbackSent ? (
-        <FeedbackSuccessStep onFeedbackRestarted={handleRestartFeedback} />
+        <FeedbackSuccessStep onFeedbackRestartRequested={handleRestartFeedback} />
       ) : !feedbackType ? (
         <FeedbackTypeStep onFeedbackTypeChanged={setFeedbackType} />
       ) : (
         <FeedbackContentStep
           feedbackType={feedbackType}
-          onFeedbackRestarted={handleRestartFeedback}
+          onFeedbackRestartRequested={handleRestartFeedback}
           onFeedbackSent={setFeedbackSent}
         />
       )}
